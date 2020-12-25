@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Таблица товаров</h1><br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>{{ product_name }}</th>
+                <th>{{ product_date }}</th>
+                <th>{{ product_price }}</th>
+                <th>{{ product_u_measure }}</th>
+                <th>{{ product_provider }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in table %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.date_rec }}</td>
+                <td>{{ i.price }}</td>
+                <td>{{ i.u_measure }}</td>
+                <td>{{ i.name_provider }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<form method="GET" action="{% url 'lesson4:insert' %}">
+    <button type="submit" class="btn btn-success">Добавить строку</button>
+</form>
+{% endblock %}

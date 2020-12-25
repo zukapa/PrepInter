@@ -1,0 +1,10 @@
+{% extends 'form.html' %}
+{% load bootstrap %}
+{% block content %}
+<h1>Добавление товаров</h1><br>
+<form class="products-form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | bootstrap }}
+    <button type="submit" class="btn btn-success">Сохранить</button>
+</form>
+{% endblock %}
