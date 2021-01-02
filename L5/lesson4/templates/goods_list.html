@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}
+    <script src="{% static 'js/myscript.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <h1>Таблица товаров</h1><br>
+    {% include 'partial_goods_list.html' %}
+    <button type="submit" class="js-create-good btn btn-primary" data-url="{% url 'lesson4:good_create' %}">Добавить строку</button>
+
+    <div class="modal fade" id="modal-good">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
